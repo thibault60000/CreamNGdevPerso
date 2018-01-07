@@ -1,0 +1,23 @@
+  c3m-btn button{
+    color: white;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 3px;
+    background: rgb(105, 105, 105);
+    cursor:pointer;
+    margin-bottom:1.6rem;
+  }
+      c3m-btn button:hover{
+          opacity:0.8;
+      }
+          c3m-btn.success button{
+              background-color: green;
+          }
+          c3m-btn.info button{
+              background-color: #1773B2;
+          }
+          c3m-btn.warning button{
+              background-color: orange;
+          }
+          c3m-btn.danger button{
+              background-color: orangered;
+          }

@@ -1,0 +1,82 @@
+c3m-column-table table{
+    text-align:left;
+    border: 1px solid #ffffff;
+    width:75%
+}
+    c3m-column-table caption{
+        font: 1.3rem "robotoregular";
+        margin-bottom: 0.6rem;
+        color: #1b1b1f;
+        text-align: left;
+    }
+        c3m-column-table thead th {
+            color: white;
+            background-color: rgb(105, 105, 105);
+            padding: 1rem 0.4rem;
+            border: 1px solid #423e3e;
+        }
+            c3m-column-table tbody td {
+                color: black;
+                background-color: white;
+                padding: 1rem 0.4rem;
+                border: 1px solid #423e3e;
+            }
+             c3m-column-table tbody strong{
+                 display:none;
+             }
+                c3m-column-table tfoot td {
+                    color: white;
+                    background-color: #565658;
+                    padding: 1rem 0.4rem;
+                    border: 1px solid #423e3e;
+                }
+@media screen and (max-width: 1000px){
+
+    c3m-column-table table {
+        border:none;
+        width: 100%;
+        display:block;
+        padding:0.5rem;
+        border-radius:3px;
+        background-color: white;
+    }
+    c3m-column-table tbody{
+        display:block;
+        width:100%;
+    }
+    c3m-column-table thead{
+        display:none;
+    }
+        c3m-column-table tbody tr{
+            display: block;
+            width: 100%;
+            margin-bottom: 1.9rem;
+        }
+            c3m-column-table tbody tr td{
+                display:block;
+                width:100%;
+                color: #353232;
+                background-color: initial;
+                padding: 0.3rem 0.4rem;
+                border: none;
+                border-bottom: 1px solid #b1abab8a;
+            }
+                c3m-column-table tbody strong{
+                    display: inline-block;
+                    color: rgb(105, 105, 105);
+                    width: 30%;
+                    font-weight: bold;
+                    font-size: 1.1rem;
+                }
+                        c3m-column-table tbody span{
+                            display: inline-block;
+                            width:60%;
+                        }
+                            c3m-column-table caption{
+                                display: block;
+                                width: 100%;
+                                font-size: 1.5rem;
+                                color: #1385c5;
+                            }
+
+}

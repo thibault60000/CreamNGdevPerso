@@ -1,0 +1,302 @@
+
+<!-- TITLE TABS COMPONENT PAGE -->
+<div class="panelTitle">
+  <h2> <strong> Accordion </strong> Component </h2>
+  <ul>
+    <li><a href="#">Normal Accordion</a></li>
+  </ul>
+</div>
+
+
+<!-- DESCRIPTION ACCORDION COMPONENT PAGE -->
+<div class="titleComponent">
+  <div class="descriptionComponent" id="nrmTabs">
+    <h3> Normal Accordion </h3>
+    <p> Its' a accordion divided into 2 components: one for the container (AccordionComponent) and the other for the content (AccordionItemComponent). </p>
+
+
+    <!-- ACCORDION DEMO -->
+    <c3m-accordion>
+
+      <c3m-accordion-item nameButton="Title1" [index]=0 [isOpen]=false>
+        Content 1
+      </c3m-accordion-item>
+
+
+      <c3m-accordion-item nameButton="Title 2" [index]=1 [isOpen]=false>
+       Content 2
+      </c3m-accordion-item>
+
+      <c3m-accordion-item nameButton="Title3" [index]=2 [isOpen]=false>
+        Content 3
+      </c3m-accordion-item>
+
+
+      <c3m-accordion-item nameButton="Title 4" [index]=3 [isOpen]=false>
+        Content 4
+      </c3m-accordion-item>
+
+    </c3m-accordion>
+
+
+
+    <p> This component is accessible and semantic. It's the same component that used for the menu of this website.
+      If you want a tab to open when the page loads, edit "isOpen" to "true"</p>
+
+
+
+    <!-- TABS SNIPPETS -->
+    <c3m-tabs>
+      <c3m-tab tabTitle="HTML">
+        <p class="pre-code"> To call the component </p>
+        <div class="code">
+          <!--?prettify lang=html linenums=true?-->
+          <pre class="prettyprint linenums">
+              <code>
+                      &#x3C;c3m-accordion&#x3E;
+                          &#x3C;c3m-accordion-item nameButton=&#x22;Title1&#x22;  [index]=0 [isOpen]=false&#x3E;
+                            Content 1
+                          &#x3C;/c3m-accordion-item&#x3E;
+                          &#x3C;c3m-accordion-item nameButton=&#x22;Title 2&#x22;  [index]=1 [isOpen]=false&#x3E;
+                           Content 2
+                          &#x3C;/c3m-accordion-item&#x3E;
+                          &#x3C;c3m-accordion-item nameButton=&#x22;Title3&#x22;  [index]=2 [isOpen]=false&#x3E;
+                            Content 3
+                          &#x3C;/c3m-accordion-item&#x3E;
+                          &#x3C;c3m-accordion-item nameButton=&#x22;Title 4&#x22;  [index]=3 [isOpen]=false&#x3E;
+                            Content 4
+                          &#x3C;/c3m-accordion-item&#x3E;
+                    &#x3C;/c3m-accordion&#x3E;
+              </code>
+            </pre>
+        </div>
+
+        <p class="pre-code"> For <strong>accordion.component.html</strong></p>
+        <div class="code">
+          <!--?prettify lang=html linenums=true?-->
+          <pre class="prettyprint linenums">
+              <code>
+                      &#x3C;ul class=&#x22;accordion&#x22;&#x3E;
+                           &#x3C;ng-content&#x3E;&#x3C;/ng-content&#x3E;
+                      &#x3C;/ul&#x3E;
+              </code>
+            </pre>
+        </div>
+
+        <p class="pre-code"> For <strong>accordion-item.component.html</strong></p>
+        <div class="code">
+          <!--?prettify lang=html linenums=true?-->
+          <pre class="prettyprint linenums">
+              <code>
+                     &#x3C;li class=&#x22;accordion-group&#x22; [ngClass]=&#x22; &#123; &#x27;closed&#x27;: !isOpen &#125; &#x22;&#x3E;
+
+                      &#x3C;button class=&#x22;panel-heading&#x22; (click)=&#x22;toggleOpen()&#x22; [attr.aria-expanded]=&#x22;isOpen&#x22; [attr.aria-controls]=&#x22;panelID&#x22; id=&#123; &#123;tabID&#125; &#125; &#x3E;
+                           &#123; &#123;nameButton&#125; &#125;
+                      &#x3C;/button&#x3E;
+
+                      &#x3C;div class=&#x22;panel-collapse&#x22; [attr.aria-hidden]=&#x22;!isOpen&#x22; id=&#123; &#123;panelID&#125; &#125; [attr.aria-labeledby]=&#x22;tabID&#x22; &#x3E;
+                          &#x3C;ng-content&#x3E;&#x3C;/ng-content&#x3E;
+                      &#x3C;/div&#x3E;
+
+                    &#x3C;/li&#x3E;
+              </code>
+            </pre>
+        </div>
+
+
+
+      </c3m-tab>
+      <c3m-tab tabTitle="CSS">
+        <p class="pre-code"> To call the component <strong>(accordion-item-component.css)</strong> </p>
+        <div class="code">
+          <!--?prettify lang=css linenums=true?-->
+          <pre class="prettyprint linenums">
+              <code>
+
+                   c3m-accordion &#x3E; ul &#123;
+                        width: 50%;
+                        box-shadow: 0px 7px 5px -4px rgba(50, 50, 50, 0.62);
+                        margin-bottom: 1.5rem;
+                    &#125;
+                        c3m-accordion-item &#x3E; li &#123;
+                            border:none;
+                            position:relative;
+                            z-index: 5;
+                            background-color: #535353;
+                        &#125;
+                            c3m-accordion-item &#x3E; li.closed &#123;
+                                border-bottom: 1px solid white;
+                            &#125;
+                            c3m-accordion-item:last-child &#x3E; li.closed &#123;
+                                border:none;
+                            &#125;
+                                c3m-accordion-item &#x3E; li.closed &#x3E; .panel-collapse &#123;
+                                    display: none;
+                                &#125;
+                                c3m-accordion-item &#x3E; li::before &#123;
+                                     content: &#x22; &#x22;;
+                                     width: 40px;
+                                     height: 40px;
+                                     display: block;
+                                     background: url(https://creamng.github.io/Library/assets/img/arrow-down-bold_white.svg) no-repeat;
+                                     position: absolute;
+                                     transform: rotate(-180deg);
+                                     z-index: 1;
+                                     transition: all 0.3s;
+                                     position: absolute;
+                                     right: 0;
+                                 &#125;
+                                c3m-accordion-item &#x3E; li.closed:before &#123;
+                                    transform: rotate(0deg);
+                                &#125;
+                                c3m-accordion-item &#x3E; li &#x3E; button &#123;
+                                    height: 100%;
+                                    width: 100%;
+                                    line-height: 1.7rem;
+                                    text-align: left;
+                                    color: white;
+                                    background-color: initial;
+                                    background-size: 2.1rem;
+                                    padding: 0.5rem 2.5rem 0.5rem 0.5rem;
+                                    cursor: pointer;
+                                    z-index: 10;
+                                    position: relative;
+                                &#125;
+                                c3m-accordion .panel-collapse &#123;
+                                    padding: 1.5rem;
+                                    color:white;
+                                    background-color: #9F9F9F;
+                                &#125;
+
+              </code>
+            </pre>
+        </div>
+
+      </c3m-tab>
+      <c3m-tab tabTitle="TypeScript">
+        <p class="pre-code">For <strong>accordion.component.ts</strong></p>
+        <div class="code">
+          <!--?prettify lang=js linenums=true?-->
+          <pre class="prettyprint linenums">
+                  <code>
+                        import &#123; Component, ViewEncapsulation &#125; from '@angular/core';
+                        import &#123; AccordionItemComponent &#125; from './accordion-item/accordion-item.component';
+
+                        @Component(&#123;
+                          selector: 'c3m-accordion',
+                          templateUrl: './accordion.component.html',
+                          styleUrls: ['./accordion.component.css'],
+                          encapsulation: ViewEncapsulation.None
+                        &#125;)
+                        export class AccordionComponent &#123;
+
+                          groups: Array&#x3C;AccordionItemComponent&#x3E; = [];
+
+                          addGroup(group: AccordionItemComponent): void &#123;
+                            this.groups.push(group);
+                          &#125;
+
+                          closeOthers(openGroup: AccordionItemComponent): void &#123;
+                            this.groups.forEach((group: AccordionItemComponent) => &#123;
+                              if (group !== openGroup) &#123;
+                                group.isOpen = false;
+                              &#125;
+                            &#125;);
+                          &#125;
+
+                          closeAll(openGroup: AccordionItemComponent): void &#123;
+                            this.groups.forEach((group: AccordionItemComponent) => &#123;
+                                group.isOpen = false;
+                            &#125;);
+                          &#125;
+
+                          removeGroup(group: AccordionItemComponent): void &#123;
+                            const index = this.groups.indexOf(group);
+                            if (index !== -1) &#123;
+                              this.groups.splice(index, 1);
+                            &#125;
+                          &#125;
+                        &#125;
+                </code>
+              </pre>
+        </div>
+
+        <p class="pre-code">For <strong>accordion-item.component.ts</strong></p>
+        <div class="code">
+          <!--?prettify lang=js linenums=true?-->
+          <pre class="prettyprint linenums">
+                  <code>
+                        import &#123; Component, ViewEncapsulation, Input, OnChanges, SimpleChanges, OnDestroy, AfterViewInit, OnInit &#125; from &#x27;@angular/core&#x27;;
+                        import &#123; AccordionComponent &#125; from &#x27;../accordion.component&#x27;;
+
+                        @Component(&#123;
+                          selector: &#x27;c3m-accordion-item&#x27;,
+                          templateUrl: &#x27;./accordion-item.component.html&#x27;,
+                          styleUrls: [&#x27;./accordion-item.component.css&#x27;],
+                          encapsulation: ViewEncapsulation.None
+                        &#125;)
+                        export class AccordionItemComponent implements OnDestroy, OnChanges, AfterViewInit, OnInit &#123;
+
+                          @Input() nameButton: string;
+                          @Input() urlImage: string;
+                          @Input() isOpen: boolean;
+                          @Input() index: number;
+                          tabID: string;
+                          panelID: string;
+
+                          /* By default , add item to accordion */
+                          constructor(private accordion: AccordionComponent) &#123;
+                            this.accordion.addGroup(this);
+                          &#125;
+
+                          /* remove item to accordion*/
+                          ngOnDestroy() &#123;
+                            this.accordion.removeGroup(this);
+                          &#125;
+
+                          /* changes */
+                          ngOnChanges(changes: SimpleChanges) &#123;
+                            for (const change in changes) &#123;
+                              if (changes.hasOwnProperty(change)) &#123;
+                                const changedProp = changes[change];
+
+                                if (!changedProp.isFirstChange()) &#123;
+                                  this.accordion.groups[this.index + 1].toggleOpen();
+                                &#125;
+                              &#125;
+                            &#125;
+                          &#125;
+
+                          /* initialisation */
+                          ngOnInit() &#123;
+                            this.tabID = &#x27;tab&#x27; + this.index;
+                            this.panelID = &#x27;panel&#x27; + this.index;
+                          &#125;
+
+                          /* when view init */
+                          ngAfterViewInit() &#123;
+                            this.tabID = &#x27;tab&#x27; + this.index;
+                            this.panelID = &#x27;panel&#x27; + this.index;
+                          &#125;
+
+
+                          /* open accordion&#x27;element */
+                          toggleOpen(): void &#123;
+                            if (!this.isOpen) &#123;
+                              this.isOpen = true;
+                              this.accordion.closeOthers(this);
+                            &#125; else if (this.isOpen) &#123;
+                              this.accordion.closeAll(this);
+                            &#125;
+                          &#125;
+                         &#125;
+                </code>
+              </pre>
+        </div>
+
+      </c3m-tab>
+    </c3m-tabs>
+
+  </div>
+
+</div>

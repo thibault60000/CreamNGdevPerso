@@ -1,0 +1,134 @@
+main{
+  display:block;
+}
+
+  .firstBlock{
+    position: relative;
+    overflow: hidden;
+    height: 23rem;
+    box-shadow: 6px 0px 14px 1px rgba(50, 50, 50, 0.62);
+  }
+  .firstBlock img{
+    margin-top: -30.2rem;
+  }
+  .firstBlock p{
+    padding-left: 2rem;
+    font: 1.2rem "robotobold";
+    position: absolute;
+    padding: 0.5rem;
+    top: 55.2%;
+    left: 8.1%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    color: #1b7ab9;
+    text-align: center;
+    width:70%;
+  }
+  .firstBlock > h2{
+    padding-left: 2rem;
+    font: 2.3rem "robotoblack";
+    position: absolute;
+    padding: 0.5rem;
+    top: 30.2%;
+    left: 8.1%;
+    background-color: rgb(27, 122, 185);
+    border-radius: 5px;
+    color: #ffffff;
+    text-align: center;
+  }
+    .whyNgCream > h2{
+        padding: 2rem;
+        font-size: 1.6rem;
+        font-family: "robotobold";
+        color: rgba(58, 58, 58, 0.83);
+    }
+      .whyNgCream{
+        display: block;
+        padding-top: 1rem;
+      }
+      .whyNgCream h2{
+          display: block;
+          text-align: center;
+          font-size: 2rem;
+          padding: 2rem 0 2rem 0;
+
+      }
+      .whyNgCream p{
+          width: 90%;
+          margin: 0 auto;
+          text-align: center;
+          margin-bottom: 1rem;
+
+      }
+      .whyNgCream p > small{
+          font: 1rem "robotolight";
+          display: block;
+          margin: 0 auto;
+          width: 50%;
+          text-align: center;
+          margin-bottom: 2rem;
+      }
+      .ngCreamBecause{
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 1rem;
+        background-color: whitesmoke;
+        padding-bottom: 3rem;
+
+      }
+      .ngCreamBecause li{
+        margin: 0 auto;
+        margin-bottom: 2rem;
+      }
+      .ngCreamBecause li img {
+          height: 5.9rem;
+      }
+      .ngCreamBecause li h3 {
+        font: 1.1rem "robotoregular";
+        text-transform: uppercase;
+        margin-top: 0.6rem;
+        margin-bottom: 0.8rem;
+        font-weight: bold;
+      }
+      .ngCreamBecause li p{
+          display: block;
+          margin: 0 auto;
+          width: 70%;
+          font: 1rem "robotolight";
+
+          line-height: 1.5rem;
+      }
+        .ngCreamBecause li p strong{
+          font-weight: bold;
+      }
+
+
+
+      @media screen and (min-width:450px){
+          .ngCreamBecause li{
+            width:50%;
+          }
+      }
+
+      @media screen and (min-width:600px){
+          .firstBlock p{
+            font: 1.6rem "robotobold";
+          }
+          .firstBlock > h2{
+            font: 2.6rem "robotoblack";
+          }
+      }
+
+      @media screen and (min-width:1100px){
+          .firstBlock p{
+            width:auto;
+          }
+      }
+
+      @media screen and (min-width: 850px){
+          .ngCreamBecause li{
+            width:33%;
+          }
+      }

@@ -1,0 +1,50 @@
+.menu-group.closed > .panel-collapse{
+  display:none;
+}
+
+c3m-menu-item > li{
+      color: black;
+      border-bottom: 2px solid rgba(236, 236, 236, 0.84);
+    }
+    c3m-menu-item > li:hover > button{
+      background-color: rgba(236, 236, 236, 0.84);
+    }
+      c3m-menu-item > li > button {
+          font-size: 1rem;
+          height: 100%;
+          width: 100%;
+          line-height: 1.7rem;
+          background-color: initial;
+          text-align: left;
+          color: #929191;
+          padding: 1rem;
+          cursor:pointer;
+      }
+        c3m-menu-item > li > button img{
+          height:1.7rem;
+          margin-right: 0.7rem;
+        }
+        .contenuMenu li{
+          padding: 0rem 0 0.4rem 1rem;
+          font: 1rem "robotolight";
+        }
+        .contenuMenu li:first-child{
+          margin-top:0.5rem;
+        }
+        .contenuMenu li > a{
+          padding: 0.6rem 0 0.6rem 1rem;
+          font-size: 0.9rem;
+          background-color:initial;
+          display:block;
+          width:80%;
+          text-align:left;
+          cursor:pointer;
+        }
+        .contenuMenu li > a:focus{
+              background-color: dimgrey;
+    color: white;
+        }
+        .contenuMenu li > a:hover{
+            background-color: #9F9F9F;
+            color:white;
+        }

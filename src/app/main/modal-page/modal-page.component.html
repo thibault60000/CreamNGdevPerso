@@ -1,0 +1,217 @@
+<!-- TITLE MODAL COMPONENT PAGE -->
+<div class="panelTitle">
+    <h2> <strong> Modal </strong> Component </h2>
+    <ul>
+        <li><a href="#">Dialog Modal</a></li>
+        <li><a href="#">Alert Modal</a></li>
+    </ul>
+</div>
+
+
+<!-- DESCRIPTION ACCORDION COMPONENT PAGE -->
+<div class="titleComponent">
+    <div class="descriptionComponent" id="nrmTabs">
+        <h3> Dialog Modal </h3>
+        <p> Its' a button with a onClick event to display the modal component </p>
+
+
+<!-- MODAL DEMO -->
+<c3m-btn (click)="OpenModal()">Open Modal</c3m-btn>
+<c3m-modal></c3m-modal>
+
+
+    <p> Open a dialog modal that set the focus to the modal title when it opens,
+        and bring focus back to the same title when tab is pressed
+        (when the focus is on the close button)</p>
+
+
+
+        <!-- TABS SNIPPETS -->
+        <c3m-tabs>
+            <c3m-tab tabTitle="HTML">
+                <p class="pre-code"> To call the component </p>
+                <div class="code">
+                    <!--?prettify lang=html linenums=true?-->
+                    <pre class="prettyprint linenums">
+                      <code>
+                          &#x3C;c3m-btn (click)=&#x22;OpenModal()&#x22;&#x3E;Open Modal&#x3C;/c3m-btn&#x3E;
+                          &#x3C;c3m-modal&#x3E;&#x3C;/c3m-modal&#x3E;
+                      </code>
+                    </pre>
+                </div>
+                <p class="pre-code"> For <strong>modal.component.html</strong> </p>
+                <div class="code">
+                    <!--?prettify lang=html linenums=true?-->
+                    <pre class="prettyprint linenums">
+                      <code>
+                           &#x3C;div class=&#x22;dialog&#x22; [attr.aria-hidden]=&#x22;!isOpen&#x22;&#x3E;
+                              &#x3C;div class=&#x22;dialog-overlay&#x22; (click)=&#x22;ToggleOpen()&#x22; tabindex=&#x22;-1&#x22;&#x3E;&#x3C;/div&#x3E;
+                                &#x3C;div class=&#x22;dialog-content&#x22; [attr.aria-labeledby]=&#x22;dialogTitle&#x22; [attr.aria-describedby]=&#x22;dialogDescription&#x22; role=&#x22;dialog&#x22;&#x3E;
+
+                                  &#x3C;h1 #focusable  id=&#x22; &#123; &#123; dialogTitle &#125; &#125; &#x22; tabindex=&#x22;0&#x22;&#x3E; Modal Title &#x3C;/h1&#x3E;
+                                  &#x3C;p id=&#x22; &#123; &#123; dialogDescription &#125; &#125; &#x22; &#x3E;Modal content text&#x3C;/p&#x3E;
+
+                                  &#x3C;label for=&#x22;inputTest&#x22;&#x3E;A simple text input&#x3C;/label&#x3E;
+                                  &#x3C;input type=&#x22;text&#x22; id=&#x22;inputTest&#x22;&#x3E;
+
+                                  &#x3C;button (click)=&#x22;ToggleOpen()&#x22; (keydown)=&#x22;focusable.focus()&#x22; class=&#x22;dialog-close&#x22; [attr.aria-label]=&#x22;btnCloseLabel&#x22;&#x3E;&#x26;times;&#x3C;/button&#x3E;
+                                &#x3C;/div&#x3E;
+                            &#x3C;/div&#x3E;
+                      </code>
+                    </pre>
+                </div>
+            </c3m-tab>
+            <c3m-tab tabTitle="CSS">
+                <p class="pre-code"> For <strong>To call the component</strong> </p>
+                <div class="code">
+                    <!--?prettify lang=css linenums=true?-->
+                    <pre class="prettyprint linenums">
+                      <code>
+                               .dialog[aria-hidden=&#x22;true&#x22;] &#123;
+                                    display: none;
+                                &#125;
+                                    .dialog-overlay &#123;
+                                        z-index: 10;
+                                        background-color: rgba(16, 15, 15, 0.84);
+                                        position: fixed;
+                                        top: 0;
+                                        left: 0;
+                                        bottom: 0;
+                                        right: 0;
+                                    &#125;
+
+                                     .dialog-content &#123;
+                                            background-color: rgb(255, 255, 255);
+                                            z-index: 15;
+                                            position: fixed;
+                                            top: 40%;
+                                            left: 25%;
+                                            padding: 2em;
+                                            width: 50%;
+                                            border-radius: 2px;
+                                        &#125;
+                                     .dialog[aria-hidden=&#x22;false&#x22;] .dialog-content&#123;
+                                        animation-duration:1s;
+                                         animation-name: test;
+                                     &#125;
+                                            @keyframes test &#123;
+                                                from &#123;
+                                                    opacity: 0;
+                                                    top:0%;
+                                                &#125;
+                                                to &#123;
+                                                    opacity: 1;
+                                                    top:40%;
+                                                &#125;
+                                            &#125;
+
+                                .dialog h1 &#123;
+                                    margin-bottom: 1.5rem;
+                                    font-size: 2rem;
+                                &#125;
+                                    .dialog p&#123;
+                                        font-size: 1.2rem;
+                                        margin-bottom:1.5rem;
+                                    &#125;
+                                    .dialog-close &#123;
+                                        position: absolute;
+                                        top: 0.5em;
+                                        right: 0.5em;
+                                        border: 0;
+                                        padding: 0;
+                                        background-color: transparent;
+                                        font-weight: bold;
+                                        font-size: 1.25em;
+                                        width: 1.2em;
+                                        height: 1.2em;
+                                        text-align: center;
+                                        cursor: pointer;
+                                        transition: 0.15s;
+                                    &#125;
+                                        .dialog input&#123;
+                                            border-radius: 2px;
+                                            border: 1px solid gray;
+                                            height: 1.4rem;
+                                        &#125;
+                                            .dialog label&#123;
+                                                font-family:&#x22;robotoitalic&#x22;;
+                                                margin-right:1rem;
+                                            &#125;
+
+                                @media screen and (min-width: 700px) &#123;
+                                    .dialog-close &#123;
+                                        top: 1em;
+                                        right: 1em;
+                                    &#125;
+
+                                &#125;
+                      </code>
+                    </pre>
+                </div>
+            </c3m-tab>
+
+            <c3m-tab tabTitle="TypeScript">
+                <p class="pre-code"> To call the component </p>
+                <div class="code">
+                    <!--?prettify lang=javascript linenums=true?-->
+                    <pre class="prettyprint linenums">
+                      <code>
+                          // You need to add (in the parent.ts of the modal.component.ts)
+
+                          import &#123; ModalComponent &#125; from &#x27;./modal/modal.component&#x27;;  // import
+
+                              @ViewChild(ModalComponent) modal: ModalComponent;   // After "export class"
+
+                                public OpenModal() &#123;           // In "export class"
+                                    this.modal.ToggleOpen();
+                                &#125;
+                      </code>
+                    </pre>
+                </div>
+                <p class="pre-code"> For <strong>modal.component.ts</strong> </p>
+                <div class="code">
+                    <!--?prettify lang=javascript linenums=true?-->
+                    <pre class="prettyprint linenums">
+                      <code>
+                           import &#123;Component, OnInit, ViewEncapsulation, Input&#125; from &#x27;@angular/core&#x27;;
+
+                            @Component(&#123;
+                              selector: &#x27;c3m-modal&#x27;,
+                              templateUrl: &#x27;./modal.component.html&#x27;,
+                              styleUrls: [&#x27;./modal.component.css&#x27;],
+                              encapsulation: ViewEncapsulation.None
+                            &#125;)
+                            export class ModalComponent implements OnInit &#123;
+
+
+                              @Input() isOpen: boolean;
+                              dialogTitle = &#x27;dialogTitle&#x27;;
+                              dialogDescription = &#x27;dialogDescription&#x27;;
+                              btnCloseLabel = &#x27;Fermer la fen&#xEA;tre de dialogue&#x27;;
+
+                              ngOnInit() &#123;
+                                this.isOpen = false;
+                              &#125;
+
+                                /* Open Modal */
+                                ToggleOpen(): void &#123;
+                                    if (!this.isOpen) &#123;
+                                        this.isOpen = true;
+
+                                    &#125; else if (this.isOpen) &#123;
+                                        this.isOpen = false;
+                                    &#125;
+                                &#125;
+
+                                OnKey(event): void &#123;
+                                    console.log(event);
+                                &#125;
+                            &#125;
+
+                      </code>
+                    </pre>
+                </div>
+            </c3m-tab>
+        </c3m-tabs>
+    </div>
+</div>

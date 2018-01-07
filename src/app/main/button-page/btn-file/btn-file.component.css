@@ -1,0 +1,26 @@
+c3m-btn-file label{
+    color: white;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 3px;
+    background: rgb(105, 105, 105);
+    cursor: pointer;
+    margin-bottom: 1.6rem;
+}
+c3m-btn-file label:hover{
+    opacity:0.8;
+}
+
+c3m-btn-file input[type="file"]{
+    position:absolute;
+    left:-9999px;
+}
+
+c3m-btn-file ul li {
+    font-family: "Robotoitalic";
+    color: #676767;
+    margin-top: 0.3rem;
+}
+c3m-btn-file ul li:first-child {
+    margin-top: 1rem;
+}
+

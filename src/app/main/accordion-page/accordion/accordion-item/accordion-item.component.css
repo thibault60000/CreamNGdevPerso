@@ -1,0 +1,56 @@
+c3m-accordion > ul{
+    width: 50%;
+    box-shadow: 0px 7px 5px -4px rgba(50, 50, 50, 0.62);
+    margin-bottom: 1.5rem;
+}
+    c3m-accordion-item > li{
+        border:none;
+        position:relative;
+        z-index: 5;
+        background-color: #535353;
+    }
+        c3m-accordion-item > li.closed{
+            border-bottom: 1px solid white;
+        }
+        c3m-accordion-item:last-child > li.closed {
+            border:none;
+        }
+            c3m-accordion-item > li.closed > .panel-collapse {
+                display: none;
+            }
+            c3m-accordion-item > li::before {
+                 content: " ";
+                 width: 40px;
+                 height: 40px;
+                 display: block;
+                 background: url(https://creamng.github.io/Library/assets/img/arrow-down-bold_white.svg) no-repeat;
+                 position: absolute;
+                 transform: rotate(-180deg);
+                 z-index: 1;
+                 transition: all 0.3s;
+                 position: absolute;
+                 right: 0;
+             }
+            c3m-accordion-item > li.closed:before{
+                transform: rotate(0deg);
+            }
+            c3m-accordion-item > li > button {
+                height: 100%;
+                width: 100%;
+                line-height: 1.7rem;
+                text-align: left;
+                color: white;
+                background-color: initial;
+                background-size: 2.1rem;
+                padding: 0.5rem 2.5rem 0.5rem 0.5rem;
+                cursor: pointer;
+                z-index: 10;
+                position: relative;
+            }
+            c3m-accordion .panel-collapse{
+                padding: 1.5rem;
+                color:white;
+                background-color: #9F9F9F;
+            }
+
+

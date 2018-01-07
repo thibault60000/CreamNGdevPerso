@@ -1,0 +1,70 @@
+c3m-pagination .paginationContainer{
+    padding:0.5rem;
+}
+    c3m-pagination .paginationItems{
+        display:block;
+        text-align: center;
+    }
+        c3m-pagination .paginationItems li{
+            color: #3e3535;
+            font: 1rem "robotoitalic";
+        }
+          c3m-pagination .pagination{
+              margin-top:2rem;
+              text-align:center;
+          }
+           c3m-pagination .pagination li {
+               background-color: #423d3d;
+               width: 1.7rem;
+               display: inline-block;
+               height: 1.7rem;
+               margin-right: 0.3rem;
+               margin-bottom: 0.6rem;
+           }
+
+           c3m-pagination .pagination li.active{
+               background-color: #7a7579;
+           }
+           c3m-pagination .pagination button{
+               background-color: initial;
+               height: 100%;
+               width: 100%;
+               color:white;
+               cursor:pointer;
+           }
+            c3m-pagination .pagination button img{
+                width: 80%;
+                height: 80%;
+                margin: 0 auto;
+                display: block;
+            }
+                c3m-pagination .pagination li:hover{
+                    background-color: #635e5e;
+                }
+                 c3m-pagination .pagination li.disabled {
+                     background-color:#615d5d;
+                 }
+                    c3m-pagination .pagination li.disabled button {
+                       pointer-events: none;
+                    }
+             @media screen and (min-width: 850px){
+                 c3m-pagination .pagination li {
+                     width: 2.1rem;
+                     height: 2.1rem;
+                 }
+             }
+
+            @media screen and (min-width: 1000px){
+                c3m-pagination .pagination li {
+                    width: 2.4rem;
+                    height: 2.4rem;
+                }
+            }
+            @media screen and (min-width: 1300px){
+                c3m-pagination .paginationContainer {
+                   width:50%;
+                }
+            }
+
+
+

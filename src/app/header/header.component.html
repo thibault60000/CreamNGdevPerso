@@ -1,0 +1,39 @@
+<!-- Header -->
+<header>
+  <button [ngClass]="{burgerVertical: menuMobile, burgerHorizontal: !menuMobile}" (click)="ToggleMenuBurger()"><img src="assets/img/burger.svg" alt="bouton mobile"/></button>
+  <a href="#">
+    <img src="assets/img/creamNG-logo.svg" alt=" Logo CREAM NG"/>
+  </a>
+</header>
+
+
+<!-- Nav -->
+<nav>
+    <c3m-menu [ngClass]="{mobileOpen: menuMobile, mobileClose: !menuMobile}">
+
+        <c3m-menu-item nameButton="Form Element" urlImage="assets/img/formElement.svg" [index]=0 [isOpen]=false>
+            <ul class="contenuMenu">
+                <li (click)="ToggleMenuBurger()"><a routerLink="/button" routerLinkActive="active"> Buttons </a></li>
+            </ul>
+        </c3m-menu-item>
+
+
+        <c3m-menu-item nameButton="Rich Components" urlImage="assets/img/richElement.svg" [index]=2 [isOpen]=false>
+            <ul class="contenuMenu">
+                <li (click)="ToggleMenuBurger()"><a routerLink="/tabs" routerLinkActive="active"> Tabs </a></li>
+                <li (click)="ToggleMenuBurger()"><a routerLink="/accordion" routerLinkActive="active">  Accordion </a></li>
+                <li (click)="ToggleMenuBurger()"><a routerLink="/carousel" routerLinkActive="active"> Carousel </a></li>
+                <li (click)="ToggleMenuBurger()"><a routerLink="/modal" routerLinkActive="active">  Modal </a></li>
+                <li (click)="ToggleMenuBurger()"><a routerLink="/table" routerLinkActive="active">  Table </a></li>
+                <li (click)="ToggleMenuBurger()"><a routerLink="/pagination" routerLinkActive="active">  Pagination </a></li>
+            </ul>
+        </c3m-menu-item>
+
+        <c3m-menu-item nameButton="Blocks" urlImage="assets/img/page-layout-header.svg" [index]=3 [isOpen]=false>
+            <ul class="contenuMenu">
+                <li (click)="ToggleMenuBurger()"><a routerLink="/navbar" routerLinkActive="active"> Navbar </a></li>
+            </ul>
+        </c3m-menu-item>
+    </c3m-menu>
+</nav>
+

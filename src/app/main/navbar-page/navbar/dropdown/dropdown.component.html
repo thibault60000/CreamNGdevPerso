@@ -1,0 +1,13 @@
+<button
+        [ngClass]="{isOpen: isOpen}"
+        (click)="openDropdown()"
+        [attr.aria-expanded]="isOpen"
+        [attr.aria-selected]="isOpen">
+  {{ this.name }}
+</button>
+
+<ul [ngClass]="{isOpen: isOpen}" [attr.aria-hidden]="!isOpen" class="dropdownContent">
+  <li *ngFor="let item of items">
+    <a [routerLink]=item.route routerLinkActive="active"> {{ item.name }}</a>
+  </li>
+</ul>

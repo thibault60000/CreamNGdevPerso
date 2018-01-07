@@ -1,0 +1,299 @@
+<!-- TITLE PAGINATION COMPONENT PAGE -->
+<div class="panelTitle">
+  <h2> <strong> Pagination </strong> Component </h2>
+  <ul>
+    <li><a href="#">Pagination</a></li>
+  </ul>
+</div>
+
+<!-- DESCRIPTION PAGINATION COMPONENT PAGE -->
+<div class="titleComponent">
+  <div class="descriptionComponent" id="nrmTabs">
+    <h3> Pagination </h3>
+    <p> A simple pagination page with Previous, First, Next, Last buttons and a button for each page </p>
+
+
+    <c3m-pagination></c3m-pagination>
+
+    <p> For change the value of items per page, change on pager.service.ts "pageSize"</p>
+
+    <!-- TABS SNIPPETS -->
+    <c3m-tabs>
+      <c3m-tab tabTitle="HTML">
+        <p class="pre-code"> To call the component </p>
+        <div class="code">
+          <!--?prettify lang=html linenums=true?-->
+          <pre class="prettyprint linenums">
+                      <code>
+                           &#x3C;c3m-pagination&#x3E;&#x3C;/c3m-pagination&#x3E;
+                      </code>
+                    </pre>
+        </div>
+        <p class="pre-code"> For <strong>column-table.component.html</strong> </p>
+        <div class="code">
+          <!--?prettify lang=html linenums=true?-->
+          <pre class="prettyprint linenums">
+                      <code>
+                          &#x3C;!-- Pagination container --&#x3E;
+                          &#x3C;div class=&#x22;paginationContainer&#x22;&#x3E;
+
+                                &#x3C;!-- All Items --&#x3E;
+                                &#x3C;ul class=&#x22;paginationItems&#x22;&#x3E;
+                                    &#x3C;li *ngFor=&#x22;let item of pagedItems&#x22;&#x3E; &#123;  &#123; item.name &#125;  &#125; &#x3C;/li&#x3E;
+                                &#x3C;/ul&#x3E;
+
+                                &#x3C;!-- Pages --&#x3E;
+                                &#x3C;ul *ngIf=&#x22;pager.pages &#x26;&#x26; pager.pages.length&#x22; class=&#x22;pagination&#x22;&#x3E;
+
+                                   &#x3C;!-- first --&#x3E;
+                                  &#x3C;li [ngClass]=&#x22; &#123; disabled:pager.currentPage === 1 &#125; &#x22; class=&#x22;btnFirst&#x22;&#x3E;
+                                    &#x3C;button (click)=&#x22;setPage(1)&#x22;&#x3E;&#x3C;img src=&#x22;assets/img/first.svg&#x22; alt=&#x22;First Page&#x22;/&#x3E; &#x3C;/button&#x3E;
+                                  &#x3C;/li&#x3E;
+
+                                  &#x3C;!-- previous --&#x3E;
+                                  &#x3C;li [ngClass]=&#x22; &#123; disabled:pager.currentPage === 1 &#125; &#x22; class=&#x22;btnPrevious&#x22;&#x3E;
+                                    &#x3C;button (click)=&#x22;setPage(pager.currentPage - 1)&#x22;&#x3E;&#x3C;img src=&#x22;assets/img/previous.svg&#x22; alt=&#x22;Previous Page&#x22;/&#x3E; &#x3C;/button&#x3E;
+                                  &#x3C;/li&#x3E;
+
+                                  &#x3C;!-- pages numbers --&#x3E;
+                                  &#x3C;li *ngFor=&#x22;let page of pager.pages&#x22; [ngClass]=&#x22; &#123; active:pager.currentPage === page &#125; &#x22; class=&#x22;btnPages&#x22;&#x3E;
+                                    &#x3C;button (click)=&#x22;setPage(page)&#x22;&#x3E; &#123;  &#123; page &#125;  &#125; &#x3C;/button&#x3E;
+                                  &#x3C;/li&#x3E;
+
+                                  &#x3C;!-- next --&#x3E;
+                                  &#x3C;li [ngClass]=&#x22; &#123; disabled:pager.currentPage === pager.totalPages &#125; &#x22; class=&#x22;btnNext&#x22;&#x3E;
+                                    &#x3C;button (click)=&#x22;setPage(pager.currentPage + 1)&#x22;&#x3E;&#x3C;img src=&#x22;assets/img/next.svg&#x22; alt=&#x22;Next Page&#x22;/&#x3E; &#x3C;/button&#x3E;
+                                  &#x3C;/li&#x3E;
+
+                                  &#x3C;!-- last --&#x3E;
+                                  &#x3C;li [ngClass]=&#x22; &#123; disabled:pager.currentPage === pager.totalPages &#125; &#x22; class=&#x22;btnLast&#x22;&#x3E;
+                                    &#x3C;button (click)=&#x22;setPage(pager.totalPages)&#x22;&#x3E;&#x3C;img src=&#x22;assets/img/last.svg&#x22; alt=&#x22;Last Page&#x22;/&#x3E; &#x3C;/button&#x3E;
+                                  &#x3C;/li&#x3E;
+
+                                &#x3C;/ul&#x3E;
+
+
+                          &#x3C;/div&#x3E;
+                      </code>
+                    </pre>
+        </div>
+      </c3m-tab>
+      <c3m-tab tabTitle="CSS">
+        <p class="pre-code"> For <strong>To call the component</strong> </p>
+        <div class="code">
+          <!--?prettify lang=css linenums=true?-->
+          <pre class="prettyprint linenums">
+                      <code>
+                                c3m-pagination .paginationContainer&#123;
+                                    padding:0.5rem;
+                                &#125;
+                                    c3m-pagination .paginationItems&#123;
+                                        display:block;
+                                        text-align: center;
+                                    &#125;
+                                        c3m-pagination .paginationItems li&#123;
+                                            color: #3e3535;
+                                            font: 1rem &#x22;robotoitalic&#x22;;
+                                        &#125;
+                                          c3m-pagination .pagination&#123;
+                                              margin-top:2rem;
+                                              text-align:center;
+                                          &#125;
+                                           c3m-pagination .pagination li &#123;
+                                               background-color: #423d3d;
+                                               width: 1.7rem;
+                                               display: inline-block;
+                                               height: 1.7rem;
+                                               margin-right: 0.3rem;
+                                               margin-bottom: 0.6rem;
+                                           &#125;
+                                            c3m-pagination .pagination li.active &#123;
+                                               background-color: #7a7579;
+                                           &#125;
+                                           c3m-pagination .pagination button&#123;
+                                               background-color: initial;
+                                               height: 100%;
+                                               width: 100%;
+                                               color:white;
+                                               cursor:pointer;
+                                           &#125;
+                                            c3m-pagination .pagination button img&#123;
+                                                width: 80%;
+                                                height: 80%;
+                                                margin: 0 auto;
+                                                display: block;
+                                            &#125;
+                                                c3m-pagination .pagination li:hover&#123;
+                                                    background-color: #635e5e;
+                                                &#125;
+                                                 c3m-pagination .pagination li.disabled &#123;
+                                                     background-color:#615d5d;
+                                                 &#125;
+                                                    c3m-pagination .pagination li.disabled button &#123;
+                                                       pointer-events: none;
+                                                    &#125;
+                                             @media screen and (min-width: 850px)&#123;
+                                                 c3m-pagination .pagination li &#123;
+                                                     width: 2.1rem;
+                                                     height: 2.1rem;
+                                                 &#125;
+                                             &#125;
+
+                                            @media screen and (min-width: 1000px)&#123;
+                                                c3m-pagination .pagination li &#123;
+                                                    width: 2.4rem;
+                                                    height: 2.4rem;
+                                                &#125;
+                                            &#125;
+                                            @media screen and (min-width: 1300px)&#123;
+                                                c3m-pagination .paginationContainer &#123;
+                                                   width:50%;
+                                                &#125;
+                                            }
+
+                      </code>
+                    </pre>
+        </div>
+      </c3m-tab>
+
+      <c3m-tab tabTitle="TypeScript">
+        <p class="pre-code"> To call the component (pagination.component.ts)</p>
+        <div class="code">
+          <!--?prettify lang=javascript linenums=true?-->
+          <pre class="prettyprint linenums">
+                      <code>
+                        import &#123;Component, OnInit, ViewEncapsulation&#125; from &#x27;@angular/core&#x27;;
+                        import &#123; Http, Headers, RequestOptions, Response &#125; from &#x27;@angular/http&#x27;;
+                        import &#x27;rxjs/add/operator/map&#x27;;
+                        import &#123; PagerService &#125; from &#x27;./pager.service&#x27;;
+
+
+                        @Component(&#123;
+                          selector: &#x27;c3m-pagination&#x27;,
+                          moduleId: module.id,
+                          templateUrl: &#x27;./pagination.component.html&#x27;,
+                          styleUrls: [&#x27;./pagination.component.css&#x27;],
+                          encapsulation: ViewEncapsulation.None
+                        &#125;)
+                        export class PaginationComponent implements OnInit &#123;
+
+                            // Constructor
+                            constructor(private http: Http, private pagerService: PagerService) &#123; &#125;
+
+                            // Array of all items to be paged
+                            private allItems: any[];
+
+                            // Pager Object
+                            pager: any = &#123;&#125;;
+
+                            // Paged Items
+                            pagedItems: any[];
+
+                            // On Init
+                            ngOnInit() &#123;
+                                // Get Data of a JSON (or other...)
+                                this.http.get(&#x27;assets/json/dataPagination.json&#x27;)
+                                    .map((response: Response) =&#x3E; response.json()) // Specify JSON type
+                                    .subscribe(data =&#x3E; &#123;
+                                        // Set items to response Json
+                                        this.allItems = data;
+
+                                        // Initialize to page 1
+                                        this.setPage(1);
+                                    &#125;);
+                            &#125;
+
+                            // SetPage
+                            setPage(page: number) &#123;
+                                // check page &#x3C; 1 or page &#x3E; totalPages
+                                if (page &#x3C; 1 || page &#x3E; this.pager.totalPages) &#123;
+                                    return;
+                                &#125;
+                                // Get pager object from service ( numberOfItems, Page)
+                                this.pager = this.pagerService.getPager(this.allItems.length, page);
+
+                                // Get current page of items (copy with slice(start,end))
+                                this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
+                            &#125;
+
+                        &#125;
+
+                      </code>
+                    </pre>
+                </div>
+
+          <p class="pre-code"> To call the service (pager.service.ts) </p>
+          <div class="code">
+              <!--?prettify lang=javascript linenums=true?-->
+              <pre class="prettyprint linenums">
+                      <code>
+                        import &#123; Injectable &#125; from &#x27;@angular/core&#x27;;
+
+                        @Injectable()
+                        export class PagerService &#123;
+
+                            // Function getPager (totalItems,  CurrentPage  , PageSize)
+                            getPager(totalItems: number, currentPage: number = 1, pageSize: number = 10) &#123;
+
+                                // Calculate total pages
+                                const totalPages = Math.ceil(totalItems / pageSize);
+
+                                // StartPage and EndPage declaration
+                                let startPage: number, endPage: number;
+
+                                // Check TotalPages &#x3C;= 10
+                                if (totalPages &#x3C;= 10) &#123;
+                                    startPage = 1; // If Less Than 10 total pages
+                                    endPage = totalPages; // Show All Pages
+                                &#125; else &#123;
+                                    // Check Total Pages &#x3E; 10
+                                    if (currentPage &#x3C;= 6) &#123;
+                                        startPage = 1;  // StartPage = 1
+                                        endPage = 10; // EndPage = 10
+                                    &#125; else if (currentPage + 4 &#x3E;= totalPages) &#123;
+                                        // Check CurrentPage + 4 &#x3E;= TotalPages  (Exit TotalPages.length)
+                                        startPage = totalPages - 9; // StartPage = TotalPage - 9
+                                        endPage = totalPages;   // EndPage = total pages
+                                    &#125; else &#123;
+                                        // Check CurrentPage &#x3E; 6 &#x26;&#x26; CurrentPage + 4 &#x3C; total pages
+                                        startPage = currentPage - 5; // StartPage = CurrentPage - 5
+                                        endPage = currentPage + 4; // EndPage = CurrentPage +4
+                                    &#125;
+                                &#125;
+
+                                // StartIndex = currentPage-1 * pageSize
+                                const startIndex = (currentPage - 1) * pageSize;
+
+                                // EndIndex = min between [startIndex + pageSize-1] AND [totalItems-1]
+                                const endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
+
+                                const pages: number[] = [];
+
+                                // Create an array of pages to ng-repeat in the pager control
+                                for (let i = startPage; i &#x3C; endPage + 1; i++) &#123;
+                                    pages.push(i);
+                                &#125;
+
+                                // Return Pager Properties
+                                return &#123;
+                                    totalItems: totalItems,
+                                    currentPage: currentPage,
+                                    pageSize: pageSize,
+                                    totalPages: totalPages,
+                                    startPage: startPage,
+                                    endPage: endPage,
+                                    startIndex: startIndex,
+                                    endIndex: endIndex,
+                                    pages: pages
+                                &#125;;
+                            &#125;
+                        &#125;
+
+                      </code>
+                    </pre>
+          </div>
+
+      </c3m-tab>
+    </c3m-tabs>
+  </div>
+</div>

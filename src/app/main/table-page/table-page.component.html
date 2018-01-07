@@ -1,0 +1,226 @@
+<!-- TITLE TABLE COMPONENT PAGE -->
+<div class="panelTitle">
+  <h2> <strong> Table </strong> Component </h2>
+  <ul>
+    <li><a href="#">Responsive | Row</a></li>
+    <li><a href="#">Toggle Table</a></li>
+    <li><a href="#">Page/Swipe Table</a></li>
+  </ul>
+</div>
+
+
+<!-- DESCRIPTION TABLE COMPONENT PAGE -->
+<div class="titleComponent">
+  <div class="descriptionComponent" id="nrmTabs">
+    <h3> Responsive | Row Table </h3>
+    <p> A Full Responsiv table that transform Column to Row</p>
+
+
+    <!-- TABLE DEMO -->
+    <c3m-column-table></c3m-column-table>
+
+    <p> This Table change on small devices. The <strong>THEAD</strong>disappears, and each row is divided by the
+      column number of the array, and on adds the column title at the beginning of each row</p>
+
+
+    <!-- TABS SNIPPETS -->
+    <c3m-tabs>
+      <c3m-tab tabTitle="HTML">
+        <p class="pre-code"> To call the component </p>
+        <div class="code">
+          <!--?prettify lang=html linenums=true?-->
+          <pre class="prettyprint linenums">
+                      <code>
+                          &#x3C;c3m-column-table&#x3E;&#x3C;/c3m-column-table&#x3E;
+                      </code>
+                    </pre>
+        </div>
+        <p class="pre-code"> For <strong>column-table.component.html</strong> </p>
+        <div class="code">
+          <!--?prettify lang=html linenums=true?-->
+          <pre class="prettyprint linenums">
+                      <code>
+                          &#x3C;table&#x3E;
+                            &#x3C;caption&#x3E; Responsive Table &#x3C;/caption&#x3E;
+                              &#x3C;thead&#x3E;
+                              &#x3C;tr&#x3E;
+                                &#x3C;th scope=&#x22;col&#x22;&#x3E;Movie Title&#x3C;/th&#x3E;
+                                &#x3C;th scope=&#x22;col&#x22;&#x3E;Time&#x3C;/th&#x3E;
+                                &#x3C;th scope=&#x22;col&#x22;&#x3E;Year&#x3C;/th&#x3E;
+                                &#x3C;th scope=&#x22;col&#x22;&#x3E;Type&#x3C;/th&#x3E;
+                                &#x3C;th scope=&#x22;col&#x22;&#x3E;Country&#x3C;/th&#x3E;
+                              &#x3C;/tr&#x3E;
+                              &#x3C;/thead&#x3E;
+
+                              &#x3C;tbody&#x3E;
+                                  &#x3C;tr&#x3E;
+                                    &#x3C;td class=&#x22;title&#x22;&#x3E;&#x3C;span&#x3E;Inception&#x3C;/span&#x3E;&#x3C;/td&#x3E;
+                                    &#x3C;td&#x3E;&#x3C;span&#x3E;148&#x3C;/span&#x3E;&#x3C;/td&#x3E;
+                                    &#x3C;td&#x3E; &#x3C;span&#x3E;2010&#x3C;/span&#x3E;&#x3C;/td&#x3E;
+                                    &#x3C;td&#x3E;&#x3C;span&#x3E;SF&#x3C;/span&#x3E;&#x3C;/td&#x3E;
+                                    &#x3C;td&#x3E;&#x3C;span&#x3E;UK&#x3C;/span&#x3E;&#x3C;/td&#x3E;
+                                  &#x3C;/tr&#x3E;
+                                  &#x3C;tr&#x3E;
+                                    &#x3C;td class=&#x22;title&#x22;&#x3E; &#x3C;span&#x3E;The dark knight&#x3C;/span&#x3E;&#x3C;/td&#x3E;
+                                    &#x3C;td&#x3E;&#x3C;span&#x3E;164&#x3C;/span&#x3E;&#x3C;/td&#x3E;
+                                    &#x3C;td&#x3E;&#x3C;span&#x3E;2012&#x3C;/span&#x3E;&#x3C;/td&#x3E;
+                                    &#x3C;td&#x3E;&#x3C;span&#x3E;SH&#x3C;/span&#x3E;&#x3C;/td&#x3E;
+                                    &#x3C;td&#x3E;&#x3C;span&#x3E;USA/UK&#x3C;/span&#x3E;&#x3C;/td&#x3E;
+                                  &#x3C;/tr&#x3E;
+                                  &#x3C;tr&#x3E;
+                                    &#x3C;td class=&#x22;title&#x22;&#x3E;&#x3C;span&#x3E;Pulp Fiction&#x3C;/span&#x3E;&#x3C;/td&#x3E;
+                                    &#x3C;td&#x3E;&#x3C;span&#x3E;154&#x3C;/span&#x3E;&#x3C;/td&#x3E;
+                                    &#x3C;td&#x3E;&#x3C;span&#x3E;1994&#x3C;/span&#x3E;&#x3C;/td&#x3E;
+                                    &#x3C;td&#x3E;&#x3C;span&#x3E;Gangster&#x3C;/span&#x3E;&#x3C;/td&#x3E;
+                                    &#x3C;td&#x3E;&#x3C;span&#x3E;USA&#x3C;/span&#x3E;&#x3C;/td&#x3E;
+                                  &#x3C;/tr&#x3E;
+                              &#x3C;/tbody&#x3E;
+                          &#x3C;/table&#x3E;
+                      </code>
+                    </pre>
+        </div>
+      </c3m-tab>
+      <c3m-tab tabTitle="CSS">
+        <p class="pre-code"> For <strong>To call the component</strong> </p>
+        <div class="code">
+          <!--?prettify lang=css linenums=true?-->
+          <pre class="prettyprint linenums">
+                      <code>
+                                 c3m-column-table table &#123;
+                                    text-align:left;
+                                    border: 1px solid #ffffff;
+                                    width:75%
+                                &#125;
+                                    c3m-column-table caption &#123;
+                                        font: 1.3rem &#x22;robotoregular&#x22;;
+                                        margin-bottom: 0.6rem;
+                                        color: #1b1b1f;
+                                        text-align: left;
+                                    &#125;
+                                        c3m-column-table thead th  &#123;
+                                            color: white;
+                                            background-color: rgb(105, 105, 105);
+                                            padding: 1rem 0.4rem;
+                                            border: 1px solid #423e3e;
+                                        &#125;
+                                            c3m-column-table tbody td  &#123;
+                                                color: black;
+                                                background-color: white;
+                                                padding: 1rem 0.4rem;
+                                                border: 1px solid #423e3e;
+                                            &#125;
+                                             c3m-column-table tbody strong &#123;
+                                                 display:none;
+                                             &#125;
+                                                c3m-column-table tfoot td  &#123;
+                                                    color: white;
+                                                    background-color: #565658;
+                                                    padding: 1rem 0.4rem;
+                                                    border: 1px solid #423e3e;
+                                                &#125;
+                                @media screen and (max-width: 1000px) &#123;
+
+                                    c3m-column-table table  &#123;
+                                        border:none;
+                                        width: 100%;
+                                        display:block;
+                                        padding:0.5rem;
+                                        border-radius:3px;
+                                        background-color: white;
+                                    &#125;
+                                    c3m-column-table tbody &#123;
+                                        display:block;
+                                        width:100%;
+                                    &#125;
+                                    c3m-column-table thead &#123;
+                                        display:none;
+                                    &#125;
+                                        c3m-column-table tbody tr &#123;
+                                            display: block;
+                                            width: 100%;
+                                            margin-bottom: 1.9rem;
+                                        &#125;
+                                            c3m-column-table tbody tr td &#123;
+                                                display:block;
+                                                width:100%;
+                                                color: #353232;
+                                                background-color: initial;
+                                                padding: 0.3rem 0.4rem;
+                                                border: none;
+                                                border-bottom: 1px solid #b1abab8a;
+                                            &#125;
+                                                c3m-column-table tbody strong &#123;
+                                                    display: inline-block;
+                                                    color: rgb(105, 105, 105);
+                                                    width: 30%;
+                                                    font-weight: bold;
+                                                    font-size: 1.1rem;
+                                                &#125;
+                                                        c3m-column-table tbody span &#123;
+                                                            display: inline-block;
+                                                            width:60%;
+                                                        &#125;
+                                                            c3m-column-table caption &#123;
+                                                                display: block;
+                                                                width: 100%;
+                                                                font-size: 1.5rem;
+                                                                color: #1385c5;
+                                                            &#125;
+                                
+                                &#125;
+
+                      </code>
+                    </pre>
+        </div>
+      </c3m-tab>
+
+      <c3m-tab tabTitle="TypeScript">
+        <p class="pre-code"> To call the component </p>
+        <div class="code">
+          <!--?prettify lang=javascript linenums=true?-->
+          <pre class="prettyprint linenums">
+                      <code>
+                         import &#123;Component, ViewEncapsulation, AfterViewInit&#125; from &#x27;@angular/core&#x27;;
+
+                          @Component(&#123;
+                            selector: &#x27;c3m-column-table&#x27;,
+                            templateUrl: &#x27;./column-table.component.html&#x27;,
+                            styleUrls: [&#x27;./column-table.component.css&#x27;],
+                            encapsulation: ViewEncapsulation.None
+                          &#125;)
+                          export class ColumnTableComponent implements AfterViewInit &#123;
+
+                            constructor() &#123; &#125;
+
+                            ngAfterViewInit() &#123;
+                              const heads = document.querySelectorAll(&#x27;thead th&#x27;);
+                              const titles = [];
+                              for ( let x = 0; x &#x3C; heads.length ; x++) &#123;
+                                titles.push(heads[x].innerHTML);
+                              &#125;
+
+                              const bodyTr = document.querySelectorAll(&#x27;tbody tr&#x27;);
+
+                              for ( let i = 0; i &#x3C; bodyTr.length; i++) &#123;
+                                  const bodyTrTd = bodyTr[i].querySelectorAll(&#x27;td&#x27;);
+                                  for ( let j = 0; j &#x3C; bodyTrTd.length; j++) &#123;
+
+                                      const strong = document.createElement(&#x27;strong&#x27;);
+                                      const title = document.createTextNode(titles[j]);
+                                      strong.appendChild(title);
+                                      bodyTrTd[j].insertBefore(strong, bodyTrTd[j].childNodes[0]);
+                                  &#125;
+                              &#125;
+                            &#125;
+                          &#125;
+
+                      </code>
+                    </pre>
+        </div>
+
+      </c3m-tab>
+    </c3m-tabs>
+
+  </div>
+</div>
+

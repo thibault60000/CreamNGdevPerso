@@ -1,0 +1,39 @@
+c3m-tabs.presentationTabV > div > ul > li {
+      margin-right: 0.3rem;
+      background-color: rgba(43, 43, 43, 0.31);
+  }
+c3m-tabs.presentationTabV > div > ul > li > a {
+    color: white;
+    font: 0.9rem "robotolight";
+    padding:0.4rem;
+}
+
+c3m-tabs.presentationTabV > div > ul > li.active {
+    background-color: #545454;
+}
+
+c3m-tabs.presentationTabV > div div.content[aria-hidden="false"] {
+    background-color: #545454;
+    padding-top: 1.1rem;
+    font: 0.9rem "robotolight";
+    color:white;
+}
+
+c3m-tabs.presentationTabV > div{
+    margin-bottom: 2.5rem;
+    width: 90%;
+}
+
+
+@media screen and (min-width:850px){
+
+  c3m-tabs.presentationTabV > div{
+    margin-bottom: 2.5rem;
+  }
+  c3m-tabs.presentationTabV > div div.content[aria-hidden="false"] {
+    font-size:1rem;
+  }
+  c3m-tabs.presentationTabV > div > ul > li > a {
+     font-size: 1rem;
+  }
+}
